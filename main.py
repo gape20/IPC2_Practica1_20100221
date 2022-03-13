@@ -14,6 +14,10 @@ ListaI.AgregarIngrediente(Ingredientes('Carne',10))
 ListaI.AgregarIngrediente(Ingredientes('Queso',5))
 ListaI.AgregarIngrediente(Ingredientes('Piña',2))
 
+'''
+Solo me grafica las primeras dos ordenes ;(
+de ahí todo esta correcto
+'''
 #Verificando que se agregaron los ingredientes
 #ListaI.ImprimirIngredientes()
 
