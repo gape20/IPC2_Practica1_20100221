@@ -29,36 +29,42 @@ while True:
 
     if opcion == 1:
         print("Ingrese el nombre del cliente:")
+    
         nombre = input()
-
+        print("")
         print("Ingres la cantidad de Pizzas:")
         cantidad = int(input())
-        ListaI.ImprimirIngredientes()
-        for n in range(cantidad):
-            print('Ingrese el nombre de un ingrediente para su pizza #' + str(n+1))
-            nombrei = input()
 
+        while True:
+            ListaI.ImprimirIngredientes()
+
+            print('Ingrese el nombre de un ingrediente para sus pizzas:')
+            nombrei = input()
+            print("")
             ing = ListaI.ObtenerIngrediente(nombrei)
 
+            if ing == None:
+                print("Ingrediente no existe, ingrese un ingrediente correcto.\n")
+            else:
+                break
         OrdenN.AgregarOrden(Orden(nombre,cantidad, ing))
 
-        print('orden agregada')
+        print('¡Orden agregada!')
         OrdenN.imprimirOrden()
-
-    if opcion == 2:
+        OrdenN.AgregarIm()
+    elif opcion == 2:
         print('Orden despachada...')
         OrdenN.QuitarOrden()
 
-    if opcion == 3:
-
+    elif opcion == 3:
         print("Nombre: Gabriel Enrique Perez Meza \n Carne: 201900221")
-
-    if opcion == 4:
+        
+    elif opcion == 4:
 
         print('Saliendo............')
         break
     else:
-        break
+        print('Ingrese una opcioón válida')
         
 
     

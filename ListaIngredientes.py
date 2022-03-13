@@ -18,14 +18,13 @@ class listaIngredientes:
         head = self.head
         x = PrettyTable()
         x.field_names = ["Nombre ingrediente","Tiempo"]
-        print("============== TABLA DE INGREDIENTES==============")
+        print("=======TABLA DE INGREDIENTES=======")
         x.add_row([f'{head.ingrediente.nombre}', f'{head.ingrediente.tiempo} minutos'])
-        
         while head.siguiente != None:
             head = head.siguiente
             x.add_row([f'{head.ingrediente.nombre}', f'{head.ingrediente.tiempo} minutos'])
         print(x)
-        
+
     def ObtenerIngrediente(self,nombre):
         head = self.head
         if nombre == head.ingrediente.nombre:
