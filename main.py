@@ -33,15 +33,17 @@ while True:
 
         print("Ingres la cantidad de Pizzas:")
         cantidad = int(input())
-
-        print("********* Ingredientes disponibles *********")
         ListaI.ImprimirIngredientes()
+        for n in range(cantidad):
+            print('Ingrese el nombre de un ingrediente para su pizza #' + str(n+1))
+            nombrei = input()
 
-        print('Ingrese el nombre de un ingrediente:')
-        nombre = input()
-        ing = ListaI.ObtenerIngrediente(nombre)
+            ing = ListaI.ObtenerIngrediente(nombrei)
 
-        OrdenN.AgregarOrden()
+        OrdenN.AgregarOrden(Orden(nombre,cantidad, ing))
+
+        print('orden agregada')
+        OrdenN.imprimirOrden()
 
     if opcion == 2:
         print('Orden despachada...')

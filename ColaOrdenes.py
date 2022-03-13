@@ -1,4 +1,7 @@
+from numpy import printoptions
+from prettytable import PrettyTable
 from nodoOrdenes import NodoOrdenes
+
 
 class ColaOrdenes:
     def __init__(self):
@@ -26,4 +29,8 @@ class ColaOrdenes:
             head = head.siguiente
             head.orden.tiempoEspera += tiempo
 
+    def imprimirOrden(self):
+        head = self.head
+        print(f'Orden nueva a nombre de {self.head.orden.nombre}')
+        print(f'Tiempo de espera: {self.head.orden.tiempoEspera}')
 

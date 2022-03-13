@@ -1,4 +1,5 @@
 from nodoIngredientes import NodoIngredientes
+from prettytable import PrettyTable
 
 class listaIngredientes:
     def __init__(self):
@@ -15,13 +16,16 @@ class listaIngredientes:
 
     def ImprimirIngredientes(self):
         head = self.head
-        print(f'Nombre: {head.ingrediente.nombre}')
-        print(f'Tiempo: {head.ingrediente.tiempo}')
+        x = PrettyTable()
+        x.field_names = ["Nombre ingrediente","Tiempo"]
+        print("============== TABLA DE INGREDIENTES==============")
+        x.add_row([f'{head.ingrediente.nombre}', f'{head.ingrediente.tiempo} minutos'])
+        
         while head.siguiente != None:
             head = head.siguiente
-            print(f'Nombre: {head.ingrediente.nombre}')
-            print(f'Tiempo: {head.ingrediente.tiempo} minutos')
-    
+            x.add_row([f'{head.ingrediente.nombre}', f'{head.ingrediente.tiempo} minutos'])
+        print(x)
+        
     def ObtenerIngrediente(self,nombre):
         head = self.head
         if nombre == head.ingrediente.nombre:
